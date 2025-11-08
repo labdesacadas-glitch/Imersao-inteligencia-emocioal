@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 240 15% 8%;
+    --foreground: 180 8% 92%;
+
+    --card: 240 12% 12%;
+    --card-foreground: 180 8% 92%;
+
+    --popover: 240 12% 12%;
+    --popover-foreground: 180 8% 92%;
+
+    --primary: 175 65% 55%;
+    --primary-foreground: 240 15% 8%;
+
+    --secondary: 280 50% 60%;
+    --secondary-foreground: 180 8% 92%;
+
+    --muted: 240 10% 25%;
+    --muted-foreground: 180 5% 65%;
+
+    --accent: 280 50% 60%;
+    --accent-foreground: 180 8% 92%;
+
+    --destructive: 0 70% 58%;
+    --destructive-foreground: 0 0% 98%;
+
+    --success: 142 65% 50%;
+    --warning: 38 85% 55%;
+
+    --border: 240 10% 22%;
+    --input: 240 10% 22%;
+    --ring: 175 65% 55%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(175 65% 55% / 0.15), hsl(280 50% 60% / 0.1));
+    --gradient-card: linear-gradient(180deg, hsl(240 12% 12%), hsl(240 15% 8%));
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 40px -10px hsl(175 65% 55% / 0.3);
+    --shadow-glow: 0 0 30px hsl(175 65% 55% / 0.25);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/50 backdrop-blur-xl border border-border/50;
+  }
+
+  .hover-lift {
+    @apply transition-transform duration-300 hover:scale-[1.02] hover:-translate-y-1;
+  }
+
+  .glow-accent {
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
